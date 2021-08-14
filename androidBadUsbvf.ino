@@ -1,3 +1,10 @@
+/*
+title: serangan badUSB menargetkan Android
+
+deskripsi: kode arduino ini akan membuat Arduino bertindak sebagai keyboard,
+kemudian akan mengirim beberapa penekanan tombol untuk Buka browser, unduh, instal, dan jalankan apk
+*/
+
 #include "DigiKeyboard.h"
 
 // FIXME: substitute your domain and port here
@@ -168,11 +175,3 @@ void loop() {
     delay(500);
   }
 }
-
-/*
-title: serangan badUSB menargetkan Android
-
-deskripsi: kode arduino ini akan membuat Arduino bertindak sebagai keyboard,
-kemudian akan mengirim beberapa penekanan tombol untuk Buka browser, unduh, instal, dan jalankan
-apk (baca selengkapnya di repo tentang cara menghasilkan apk shell terbalik)
-*/
