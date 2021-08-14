@@ -169,8 +169,10 @@ void loop() {
   }
 }
 
+/*
 title: serangan badUSB menargetkan Android
 
 deskripsi: kode arduino ini akan membuat Arduino bertindak sebagai keyboard,
 kemudian akan mengirim beberapa penekanan tombol untuk Buka browser, unduh, instal, dan jalankan
 apk (baca selengkapnya di repo tentang cara menghasilkan apk shell terbalik)
+*/
